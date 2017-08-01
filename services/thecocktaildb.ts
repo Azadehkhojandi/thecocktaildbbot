@@ -1,5 +1,5 @@
 import * as request from "request"
-import {ICocktail} from "./icocktail"
+import { ICocktail } from "./icocktail"
 export class thecocktaildb {
     public static getcocktails(cocktailname: string, max: number = 5): Promise<ICocktail[]> {
 
@@ -9,7 +9,8 @@ export class thecocktaildb {
             const path = `http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailname}`;
 
             request(path, function (error, response, body) {
-                let cocktails: ICocktail[]=[];
+                let cocktails: ICocktail[] = [];
+
                 let ingredients: string[] = [];
                 if (error) {
                     console.error(error);
@@ -23,6 +24,26 @@ export class thecocktaildb {
                         return drink.strDrinkThumb != null;
                     }).slice(0, max);
 
+console.log("top5.length:"+top5.length);
+                    if (top5.length < max) {
+                       
+                        var top5withoutphoto = result.drinks.sort((a: any, b: any) => {
+                            if (a.strInstructions == null) {
+                                return 1;
+                            }
+                            else if (b.strInstructions === null) {
+                                return -1;
+                            }
+                            else if (a.strInstructions === b.strInstructions) {
+                                return 0;
+                            }
+
+                        }
+                        ).slice(0, max - top5.length);
+                       top5= top5.concat(top5withoutphoto);
+                    }
+
+
                     top5.forEach(element => {
 
 
@@ -35,7 +56,7 @@ export class thecocktaildb {
 
 
 
-                        var cocktail :ICocktail= {
+                        var cocktail: ICocktail = {
                             title: element.strDrink,
                             instructions: element.strInstructions,
                             ingredients: ingredients.filter(i => i.replace('\n\r', '') !== ''),

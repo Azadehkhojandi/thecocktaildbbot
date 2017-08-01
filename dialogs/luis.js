@@ -50,6 +50,9 @@ const dialog = {
                     session.send(reply);
                     session.endConversation();
                 }
+                else {
+                    session.endConversation("couldn't find any result");
+                }
             })
                 .catch(function (err) {
                 console.log('error', err.message);

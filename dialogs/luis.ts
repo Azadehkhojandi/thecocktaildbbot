@@ -55,6 +55,10 @@ const dialog: IDialog = {
                         session.send(reply);
                         session.endConversation();
                     }
+                    else
+                        {
+                             session.endConversation("couldn't find any result");
+                        }
 
                 })
                 .catch(function (err) {
