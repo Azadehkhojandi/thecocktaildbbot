@@ -1,0 +1,17 @@
+{
+    "name": "sample-1",
+    "dependencies": {
+        "botbuilder": "^3.4.4",
+        "dotenv": "^2.0.0",
+        "restify": "^4.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.52",
+        "@types/request": "^2.0.0",
+        "@types/restify": "^2.0.35",
+        "request": "^2.81.0"
+    },
+    "scripts": {
+        "start": "nodemon app.js"
+    }
+}
