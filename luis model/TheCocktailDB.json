@@ -1,0 +1,72 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "TheCocktailDB",
+  "desc": "how to make cocktails",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "How to make a cocktail"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "What to make by specific ingredient"
+    }
+  ],
+  "entities": [
+    {
+      "name": "cocktail name"
+    },
+    {
+      "name": "ingredient"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "how to make margarita",
+      "intent": "How to make a cocktail",
+      "entities": [
+        {
+          "entity": "cocktail name",
+          "startPos": 12,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how to make [ $cocktail name ]?",
+      "intent": "How to make a cocktail",
+      "entities": []
+    },
+    {
+      "text": "what can i make by using vodka?",
+      "intent": "What to make by specific ingredient",
+      "entities": [
+        {
+          "entity": "ingredient",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "what can i make by using vodka",
+      "intent": "What to make by specific ingredient",
+      "entities": [
+        {
+          "entity": "ingredient",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    }
+  ]
+}
