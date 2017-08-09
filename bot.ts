@@ -15,7 +15,7 @@ const bot = new builder.UniversalBot(
         appPassword: process.env.MICROSOFT_APP_PASSWORD
     }),
    (session, args, next) => {
-           session.send("hi - I'm sample bot");
+           session.send("hi! I'm the cocktail master. You can ask me how to make cocktail.");
         }
 );
 

@@ -1,5 +1,7 @@
 {
-    "name": "sample-1",
+    "name": "thecocktailmasterbot",
+    "version": "1.0.0",
+    "description": "It's a chat bot that will return cocktail recipes",
     "dependencies": {
         "botbuilder": "^3.4.4",
         "dotenv": "^2.0.0",
@@ -9,9 +11,12 @@
         "@types/node": "^6.0.52",
         "@types/request": "^2.0.0",
         "@types/restify": "^2.0.35",
+        "gulp": "^3.9.1",
         "request": "^2.81.0"
     },
     "scripts": {
-        "start": "nodemon app.js"
+        "build":"tsc| gulp",
+        "start": "nodemon app.js",
+        "deploy":"ks -u -f dest"
     }
 }

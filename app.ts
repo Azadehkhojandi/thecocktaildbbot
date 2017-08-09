@@ -16,7 +16,7 @@ class App {
 
 
 
-if (process.env.FUNCTIONS_EXTENSION_VERSION) {
+if (process.env.Is_Azure_FUNCTION) {
 
     let listener = (bot.connector('*') as builder.ChatConnector).listen();
     module.exports =
