@@ -4,7 +4,28 @@ This bot has been created using [Microsoft Bot Framework](https://dev.botframewo
 
 This bot is designed to do the following:
 
-it&#39;s a sample bot
+It's a bot that you can ask how to make cocktail and it will return back the cocktail recipe.
+
+question : how to make margarita
+answer : It will return top 5 margarita recipes
+
+## .env file
+
+create a file named .env in your root folder and copy and paste the following keys and set values accordingly 
+
+PORT=3978
+MICROSOFT_APP_ID=
+MICROSOFT_APP_PASSWORD=
+KBID=
+SUBSCRIPTION_KEY=
+LUIS_MODEL_URL=
+
+
+## How to set up LUIS
+the luis model is under luis model folder and you easily import it to yours 
+1- go to https://www.luis.ai/home
+2- click on Import App select the TheCocktailDB.json from /luis model/TheCocktailDB.json
+3- update 
 
 ## About the generator
 
