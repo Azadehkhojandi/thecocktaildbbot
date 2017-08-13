@@ -8,4 +8,6 @@ gulp.task('default', function() {
      gulp.src('./function.json')
     .pipe(gulp.dest('./dest'));
 
+     gulp.src('.env')
+    .pipe(gulp.dest('./dest'));
 });

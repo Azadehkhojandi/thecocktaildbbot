@@ -28,8 +28,8 @@ const dialog: IDialog = {
             else builder.Prompts.text(session, 'Please provide cocktail name');
         },
         (session, results, next) => {
-            
-            session.send(`You said ${results.response}`);
+
+            //session.send(`You said ${results.response}`);
 
             thecocktaildb.getcocktails(results.response, 5).then(
                 function (cocktails) {
@@ -45,6 +45,9 @@ const dialog: IDialog = {
                                 .images([
                                     builder.CardImage.create(session, cocktail.image)
                                 ])
+                                .buttons([
+                                    builder.CardAction.openUrl(session, `http://www.thecocktaildb.com/drink.php?c=${cocktail.id}`, 'more info')
+                                ]);
 
                             cards.push(card);
                         });
@@ -55,10 +58,9 @@ const dialog: IDialog = {
                         session.send(reply);
                         session.endConversation();
                     }
-                    else
-                        {
-                             session.endConversation("couldn't find any result");
-                        }
+                    else {
+                        session.endConversation("couldn't find any result");
+                    }
 
                 })
                 .catch(function (err) {

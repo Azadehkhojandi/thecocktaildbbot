@@ -15,8 +15,8 @@
         "request": "^2.81.0"
     },
     "scripts": {
-        "build":"tsc| gulp",
-        "start": "nodemon app.js",
-        "deploy":"ks -u -f dest"
+        "build": "tsc| gulp",
+        "start": "nodemon ./dest/app.js",
+        "deploy": "ks -u -f dest"
     }
 }

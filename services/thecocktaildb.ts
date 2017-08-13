@@ -37,6 +37,7 @@ export class thecocktaildb {
                             ingredients.push(ingredient);
                         }
                         var cocktail: ICocktail = {
+                            id:element.idDrink,
                             title: element.strDrink,
                             instructions: element.strInstructions,
                             ingredients: ingredients.filter(i => i.replace('\n\r', '') !== ''),
