@@ -1,7 +1,6 @@
 {
   "name": "thecocktailmasterbot",
   "version": "1.0.0",
-  "main": "./dest/app.js",
   "description": "It's a chat bot that will return cocktail recipes",
   "dependencies": {
     "botbuilder": "^3.4.4",
