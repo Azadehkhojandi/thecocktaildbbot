@@ -1,5 +1,5 @@
 {
-    "scriptFile": "./app.js",
+    "scriptFile": "./dest/app.js",
     "bindings": [
         {
             "authLevel": "function",

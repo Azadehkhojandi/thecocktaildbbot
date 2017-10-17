@@ -1,22 +1,24 @@
 {
-    "name": "thecocktailmasterbot",
-    "version": "1.0.0",
-    "description": "It's a chat bot that will return cocktail recipes",
-    "dependencies": {
-        "botbuilder": "^3.4.4",
-        "dotenv": "^2.0.0",
-        "restify": "^4.3.0"
-    },
-    "devDependencies": {
-        "@types/node": "^6.0.52",
-        "@types/request": "^2.0.0",
-        "@types/restify": "^2.0.35",
-        "gulp": "^3.9.1",
-        "request": "^2.81.0"
-    },
-    "scripts": {
-        "build": "tsc| gulp",
-        "start": "nodemon ./dest/app.js",
-        "deploy": "ks -u -f dest"
-    }
+  "name": "thecocktailmasterbot",
+  "version": "1.0.0",
+  "description": "It's a chat bot that will return cocktail recipes",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "dotenv": "^2.0.0",
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.52",
+    "@types/request": "^2.0.0",
+    "@types/restify": "^2.0.35",
+    "gulp": "^3.9.1",
+    "nodemon": "^1.12.1",
+    "request": "^2.81.0"
+  },
+  "scripts": {
+    "dev": "tsc --watch | nodemon ./dest/app.js --delay 5",
+    "build": "tsc| gulp",
+    "start": "node ./dest/app.js",
+    "deploy": "ks -u -f dest"
+  }
 }
