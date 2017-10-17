@@ -8,13 +8,13 @@ class App {
     run() {
         const server = restify.createServer();
         server.post('/api/messages', (bot.connector('*') as builder.ChatConnector).listen());
-        server.listen(process.env.PORT, () => console.log(`${server.name} listening to ${server.url}`));
-        // Serve a static web page
+        
         server.get(/.*/, restify.serveStatic({
             'directory': '.',
             'default': '/index2.html'
         }));
-
+        server.listen(process.env.PORT, () => console.log(`${server.name} listening to ${server.url}`));
+        // Serve a static web page
     }
 }
 
